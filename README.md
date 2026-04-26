@@ -1,16 +1,26 @@
-# React + Vite
+- Interfaz PWA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend desarrollado con React y Vite para la visualización del inventario de la carnicería en tiempo real. Esta aplicación está diseñada como una Progressive Web App (PWA), lo que permite su instalación en dispositivos móviles y escritorio.
 
-Currently, two official plugins are available:
+## Tecnologías utilizadas
+* **React 18** (Vite como bundler)
+* **Tailwind CSS v4**: Para el diseño de la interfaz comercial.
+* **GSAP**: Para las animaciones de entrada y transiciones de los productos.
+* **Vite PWA Plugin**: Gestión de Service Workers y manifiesto para la instalación.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Instalación
 
-## React Compiler
+1. Clonar el repositorio.
+2. Instalar las dependencias (necesario usar el flag de compatibilidad por las versiones de Vite):
+   ```bash
+   npm install --legacy-peer-deps
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Comandos disponibles
+Desarrollo: npm run dev para levantar el servidor local en el puerto 5173.
 
-## Expanding the ESLint configuration
+Construcción: npm run build para generar la carpeta de distribución (dist) con el Service Worker listo.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Vista previa: npm run preview para probar la versión de producción e instalar la app.
+
+La aplicación se comunica con el backend a través del API Gateway en http://localhost:8080. Es indispensable que los microservicios estén activos para que el catálogo de productos se visualice correctamente.
+
